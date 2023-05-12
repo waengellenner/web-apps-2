@@ -9,6 +9,7 @@ class ContactsController < ApplicationController
   def new
     @contact = Contact.new
     # render contacts/new view with new Contact form
+    @contact["company_id"] = params["company_id"]
   end
 
   def create
