@@ -1,7 +1,10 @@
 class BitcoinsController < ApplicationController
 
   def index
-    bitcoin = 1.0
+  end
+
+  def create
+    bitcoin = params["amount"]
  
   # connect to the Coindesk API
   # DON'T CHANGE THIS CODE
@@ -19,6 +22,7 @@ class BitcoinsController < ApplicationController
 
   # calculate value in USD of user's bitcoin
   @usd_value = @usd_rate * bitcoin.to_f
+
   end
   
 end 
